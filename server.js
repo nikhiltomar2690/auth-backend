@@ -110,12 +110,12 @@ app.post('/login', async (req, res) => {
             token: user.pushToken
         };
 
-        // await admin.messaging().send(message);
-        try {
-            await admin.messaging().send(message);
-        } catch (error) {
-            console.log("Error with sending notification");
-        }
+        await admin.messaging().send(message);
+        // try {
+        //     await admin.messaging().send(message);
+        // } catch (error) {
+        //     console.log("Error with sending notification");
+        // }
         res.status(200).json({ transactionId });
     } catch (err) {
         console.error('Error initiating login:', err);
