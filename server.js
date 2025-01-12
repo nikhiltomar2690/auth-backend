@@ -94,7 +94,7 @@ app.post('/login', async (req, res) => {
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
-
+        console.log('Sending to token:', user.pushToken);
         const transactionId = Math.random().toString(36).substring(2);
         const transaction = new Transaction({ transactionId, email });
         await transaction.save();
