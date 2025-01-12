@@ -1,0 +1,4 @@
+node_modules/
+.env
+.vercel
+passwordless-auth-ca60a-firebase-adminsdk-kis7x-4049fa8d3a.json
