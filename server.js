@@ -110,7 +110,14 @@ app.post('/login', async (req, res) => {
             token: user.pushToken
         };
 
-        await admin.messaging().send(message);
+        // await admin.messaging().send(message);
+    admin.messaging().send(message)
+    .then((response) => {
+        console.log('Message sent successfully:', response);
+        })
+    .catch((error) => {
+        console.error('Error sending message:', error);
+        });
         // try {
         //     await admin.messaging().send(message);
         // } catch (error) {
